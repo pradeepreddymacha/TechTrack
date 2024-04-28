@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disk Metrics - TechTrack</title>
+    <link rel="stylesheet" href="../Project_Css/link.css">
+    <link rel="stylesheet" href="../Project_Css/tablealignment.css">
+</head>
+<body>
+<header>
+    <img src="../logos/logo.png" alt="TechTrack Logo" class="logo">
+    <div class="header-content">
+        <h1>Disk Metrics</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Metrics</a>
+                    <div class="dropdown-content">
+                        <a href="systemmetrics.html">System Details</a>
+                        <a href="cpumetrics.html">CPU</a>
+                        <a href="diskmetrics.html">Disk</a>
+                        <a href="memorymetrics.html">Memory</a>
+                        <a href="networkmetrics.html">Network</a>
+                        <a href="processmetrics.html">Process</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <h2>Disk Metrics - Hourly (Today)</h2>
+    <table id="hourlyDiskMetrics"></table>
+    <h2>Disk Metrics - Weekly</h2>
+    <table id="weeklyDiskMetrics"></table>
+    <h2>Disk Metrics - Monthly</h2>
+    <table id="monthlyDiskMetrics"></table>
+</main>
+
+<script src="../charts/scripts.js"></script>
+<script src="../tables/diskmetrics.js"></script>
+</body>
+</html>
