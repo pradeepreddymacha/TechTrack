@@ -1,0 +1,6 @@
+APIConnectionTests.class
+CollectorTests\ProcessMetricsCollectorTest.class
+CollectorTests\SystemMetricsCollectorTest.class
+CollectorTests\DynamicSystemMetricsCollectorTest.class
+TestSuite.class
+CollectorTests\NetworkMetricsCollectorTest.class
