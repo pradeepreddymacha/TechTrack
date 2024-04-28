@@ -1,0 +1,46 @@
+package com.mainProject.Techtrack;
+
+import com.mainProject.DatabaseConnector.DatabaseManager;
+import com.mainProject.userVariables.DiskMetricsVariables;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+
+@RestController
+public class DiskMetricsCollector {
+
+    // SQL query to insert data into the table
+    public static final String INSERT_QUERY = "INSERT INTO disk_metrics (timestamp, DeviceID, FreeSpace, Size, VolumeName) VALUES (?, ?, ?, ?, ?)";
+
+    @PostMapping("/Disk_metrics")
+    public String insertMetrics(@RequestBody DiskMetricsVariables metrics) {
+        try (
+                // Obtaining a connection from the DatabaseManager
+                Connection connection = DatabaseManager.getConnection();
+                // Creating a statement using the connection object
+                PreparedStatement preparedStatement = connection.prepareStatement(INSERT_QUERY)
+        ) {
+            // Setting parameters for the prepared statement
+
+
+            preparedStatement.setTimestamp(1, new Timestamp(metrics.getTimestamp()));
+            preparedStatement.setString(2, metrics.getDeviceID());
+            preparedStatement.setLong(3, metrics.getFreeSpace());
+            preparedStatement.setLong(4, metrics.getSize());
+            preparedStatement.setString(5, metrics.getVolumeName());
+
+            // Executing the statement
+            preparedStatement.executeUpdate();
+
+            return "Metrics inserted successfully!";
+        } catch (SQLException e) {
+            return "Failed to insert metrics.";
+        }
+    }
+
+}
