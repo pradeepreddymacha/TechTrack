@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="41.101" tests="27" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="41.489" tests="27" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\prade\Desktop\Final_code\TechTrack\TechTrack\target\test-classes;C:\Users\prade\Desktop\Final_code\TechTrack\TechTrack\target\classes;C:\Users\prade\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\prade\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\prade\Desktop\New_Code\TechTrack\TechTrack\target\test-classes;C:\Users\prade\Desktop\New_Code\TechTrack\TechTrack\target\classes;C:\Users\prade\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\prade\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\prade\AppData\Local\Temp\surefire10593103634777212065\surefirebooter-20240428172930423_3.jar C:\Users\prade\AppData\Local\Temp\surefire10593103634777212065 2024-04-28T17-29-30_284-jvmRun1 surefire-20240428172930423_1tmp surefire_0-20240428172930423_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\prade\AppData\Local\Temp\surefire18339389693045802190\surefirebooter-20240429141024025_3.jar C:\Users\prade\AppData\Local\Temp\surefire18339389693045802190 2024-04-29T14-10-23_852-jvmRun1 surefire-20240429141024025_1tmp surefire_0-20240429141024025_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\prade\Desktop\Final_code\TechTrack\TechTrack\target\test-classes;C:\Users\prade\Desktop\Final_code\TechTrack\TechTrack\target\classes;C:\Users\prade\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\prade\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\prade\Desktop\New_Code\TechTrack\TechTrack\target\test-classes;C:\Users\prade\Desktop\New_Code\TechTrack\TechTrack\target\classes;C:\Users\prade\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\prade\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\prade\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\prade"/>
     <property name="user.language" value="en"/>
@@ -25,12 +25,12 @@
     <property name="java.version.date" value="2023-09-19"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="C:\Users\prade\Desktop\Final_code\TechTrack\TechTrack"/>
+    <property name="basedir" value="C:\Users\prade\Desktop\New_Code\TechTrack\TechTrack"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\prade\AppData\Local\Temp\surefire10593103634777212065\surefirebooter-20240428172930423_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\prade\AppData\Local\Temp\surefire18339389693045802190\surefirebooter-20240429141024025_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21+35-LTS-2513"/>
@@ -45,7 +45,7 @@
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="C:\Users\prade\AppData\Local\Temp\"/>
     <property name="java.version" value="21"/>
-    <property name="user.dir" value="C:\Users\prade\Desktop\Final_code\TechTrack\TechTrack"/>
+    <property name="user.dir" value="C:\Users\prade\Desktop\New_Code\TechTrack\TechTrack"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
@@ -58,11 +58,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testGetSystemType" classname="CollectorTests.SystemMetricsCollectorTest" time="0.091"/>
+  <testcase name="testGetSystemType" classname="CollectorTests.SystemMetricsCollectorTest" time="0.097"/>
   <testcase name="testGetOsVersion" classname="CollectorTests.SystemMetricsCollectorTest" time="0.0"/>
-  <testcase name="testGetSystemManufacturer" classname="CollectorTests.SystemMetricsCollectorTest" time="0.086"/>
+  <testcase name="testGetSystemManufacturer" classname="CollectorTests.SystemMetricsCollectorTest" time="0.064"/>
   <testcase name="testGetMacAddress" classname="CollectorTests.SystemMetricsCollectorTest" time="0.0"/>
-  <testcase name="testGetSystemModel" classname="CollectorTests.SystemMetricsCollectorTest" time="1.739"/>
+  <testcase name="testGetSystemModel" classname="CollectorTests.SystemMetricsCollectorTest" time="2.172"/>
   <testcase name="testGetHostName" classname="CollectorTests.SystemMetricsCollectorTest" time="0.0"/>
   <testcase name="testGetOsName" classname="CollectorTests.SystemMetricsCollectorTest" time="0.0"/>
   <testcase name="testCollectSystemMetrics" classname="CollectorTests.SystemMetricsCollectorTest" time="0.0"/>
@@ -77,12 +77,12 @@
   <testcase name="testBytesSentCollection" classname="CollectorTests.NetworkMetricsCollectorTest" time="0.0"/>
   <testcase name="testUnicastPacketsReceivedCollection" classname="CollectorTests.NetworkMetricsCollectorTest" time="0.0"/>
   <testcase name="testDiskMetricsCollection" classname="CollectorTests.DynamicSystemMetricsCollectorTest" time="0.0"/>
-  <testcase name="testCPUMetricsCollection" classname="CollectorTests.DynamicSystemMetricsCollectorTest" time="1.12"/>
+  <testcase name="testCPUMetricsCollection" classname="CollectorTests.DynamicSystemMetricsCollectorTest" time="1.142"/>
   <testcase name="testMemoryMetricsCollection" classname="CollectorTests.DynamicSystemMetricsCollectorTest" time="0.0"/>
-  <testcase name="testSystemMetricsAPI" classname="APIConnectionTests" time="0.047"/>
-  <testcase name="testCPUloadMetricsAPI" classname="APIConnectionTests" time="0.015"/>
-  <testcase name="testmemoryMetricsAPI" classname="APIConnectionTests" time="0.047"/>
-  <testcase name="testNetworkMetricsAPI" classname="APIConnectionTests" time="0.032"/>
-  <testcase name="testProcessMetricsAPI" classname="APIConnectionTests" time="0.031"/>
-  <testcase name="testdiscMetricsAPI" classname="APIConnectionTests" time="0.032"/>
+  <testcase name="testSystemMetricsAPI" classname="APIConnectionTests" time="0.018"/>
+  <testcase name="testCPUloadMetricsAPI" classname="APIConnectionTests" time="0.009"/>
+  <testcase name="testmemoryMetricsAPI" classname="APIConnectionTests" time="0.009"/>
+  <testcase name="testNetworkMetricsAPI" classname="APIConnectionTests" time="0.008"/>
+  <testcase name="testProcessMetricsAPI" classname="APIConnectionTests" time="0.01"/>
+  <testcase name="testdiscMetricsAPI" classname="APIConnectionTests" time="0.01"/>
 </testsuite>
