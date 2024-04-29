@@ -84,7 +84,6 @@ public class MemoryMetricsController {
                             aggregatedMetrics.setHour(resultSet.getInt(tableName + "_var"));
                             break;
                         case "day":
-                            System.out.println(" Week is "+resultSet.getString(tableName + "_var"));
                             aggregatedMetrics.setDay(resultSet.getString(tableName + "_var"));
                             break;
                         case "month":

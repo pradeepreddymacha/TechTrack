@@ -23,8 +23,8 @@ public class NetworkMetricsController {
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
                 while (resultSet.next()) {
-                    long receivedBytes = resultSet.getInt("received_bytes");
-                    long sentBytes = resultSet.getInt("sent_bytes");
+                    long receivedBytes = resultSet.getLong("received_bytes");
+                    long sentBytes = resultSet.getLong("sent_bytes");
                     Timestamp tmstp = resultSet.getTimestamp("timestamp");
 
                     //System.out.println(sentBytes);
@@ -55,10 +55,10 @@ public class NetworkMetricsController {
                     // Assuming NetworkMetrics is a POJO representing your network metrics
                     AggregatedNetworkMetrics networkMetrics = new AggregatedNetworkMetrics();
                     networkMetrics.setConnectionName(resultSet.getString("connection_name"));
-                    networkMetrics.setReceivedBytes(resultSet.getInt("received_bytes"));
-                    networkMetrics.setSentBytes(resultSet.getInt("sent_bytes"));
-                    networkMetrics.setReceivedPackets(resultSet.getInt("unicast_packets"));
-                    networkMetrics.setSentPackets(resultSet.getInt("sent_unicast_packets"));
+                    networkMetrics.setReceivedBytes(resultSet.getLong("received_bytes"));
+                    networkMetrics.setSentBytes(resultSet.getLong("sent_bytes"));
+                    networkMetrics.setReceivedPackets(resultSet.getLong("unicast_packets"));
+                    networkMetrics.setSentPackets(resultSet.getLong("sent_unicast_packets"));
                     networkMetrics.setTimestamp(resultSet.getTimestamp("timestamp"));
                     networkMetricsList.add(networkMetrics);
                 }
