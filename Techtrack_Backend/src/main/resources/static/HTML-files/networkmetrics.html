@@ -9,7 +9,7 @@
 </head>
 <body>
 <header>
-    <img src="../logos/logo.png" alt="TechTrack Logo" class="logo">
+    <img src="../logos/logo.jpeg" alt="TechTrack Logo" class="logo">
     <div class="header-content">
         <h1>Network Metrics</h1>
         <nav>
@@ -34,8 +34,8 @@
 </header>
 <main>
     <div class="network-card">
-        <h2>Network Traffic - Daily</h2>
-        <table id="dailyNetworkLoad">
+        <h2>Network Traffic</h2>
+        <table id="networkTable">
             <thead>
             <tr>
                 <th>Timestamp</th>
@@ -46,44 +46,9 @@
                 <th>Sent Unicast Packets</th>
             </tr>
             </thead>
-            <tbody>
-            <!-- Filled by JavaScript -->
-            </tbody>
-        </table>
-        <h2>Network Traffic - Weekly</h2>
-        <table id="weeklyNetworkLoad">
-            <thead>
-            <tr>
-                <th>Timestamp</th>
-                <th>Connection Name</th>
-                <th>Received Bytes</th>
-                <th>Unicast Packets</th>
-                <th>Sent Bytes</th>
-                <th>Sent Unicast Packets</th>
-            </tr>
-            </thead>
-            <tbody>
-            <!-- Filled by JavaScript -->
-            </tbody>
-        </table>
-        <h2>Network Traffic - Monthly</h2>
-        <table id="monthlyNetworkLoad">
-            <thead>
-            <tr>
-                <th>Timestamp</th>
-                <th>Connection Name</th>
-                <th>Received Bytes</th>
-                <th>Unicast Packets</th>
-                <th>Sent Bytes</th>
-                <th>Sent Unicast Packets</th>
-            </tr>
-            </thead>
-            <tbody>
-            </tbody>
         </table>
     </div>
 </main>
-
 <script src="../charts/scripts.js"></script>
 <script src="../tables/networkmetrics.js"></script>
 </body>
