@@ -43,5 +43,31 @@ public class NetworkMetricsController {
         }
         return networkMetricsList;
     }
+
+    @GetMapping("/get_network_metrics")
+    public List<AggregatedNetworkMetrics> getAllNetworkMetrics() {
+        List<AggregatedNetworkMetrics> networkMetricsList = new ArrayList<>();
+        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+            String query = "SELECT * FROM network_metrics ORDER BY timestamp DESC LIMIT 20";
+            try (PreparedStatement preparedStatement = connection.prepareStatement(query);
+                 ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    // Assuming NetworkMetrics is a POJO representing your network metrics
+                    AggregatedNetworkMetrics networkMetrics = new AggregatedNetworkMetrics();
+                    networkMetrics.setConnectionName(resultSet.getString("connection_name"));
+                    networkMetrics.setReceivedBytes(resultSet.getInt("received_bytes"));
+                    networkMetrics.setSentBytes(resultSet.getInt("sent_bytes"));
+                    networkMetrics.setReceivedPackets(resultSet.getInt("unicast_packets"));
+                    networkMetrics.setSentPackets(resultSet.getInt("sent_unicast_packets"));
+                    networkMetrics.setTimestamp(resultSet.getTimestamp("timestamp"));
+                    networkMetricsList.add(networkMetrics);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle SQLException appropriately
+        }
+        return networkMetricsList;
+    }
 }
 
