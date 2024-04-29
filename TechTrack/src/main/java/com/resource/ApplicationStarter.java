@@ -9,10 +9,6 @@ import static com.resource.MainCollectors.SystemMetricsCollector.collectingSyste
 public class ApplicationStarter {
     public static void main(String[] args) {
         try {
-            if(args.length !=0 && args[0].equals("Off")){
-                System.out.println("Process is getting killed");
-                return;
-            }
             collectingSystemMetrics();
             while(true){
 
