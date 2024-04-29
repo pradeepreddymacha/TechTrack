@@ -10,7 +10,6 @@ public class NetworkMetricsVariables {
     private long sentUnicastPackets;
 
     // Constructors, getters, and setters
-    public NetworkMetricsVariables() {}
 
     public NetworkMetricsVariables(long timestamp, String connectionName, long receivedBytes, long unicastPackets, long sentBytes, long sentUnicastPackets) {
         this.timestamp = timestamp;
