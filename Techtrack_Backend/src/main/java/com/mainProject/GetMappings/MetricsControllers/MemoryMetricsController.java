@@ -1,5 +1,8 @@
-package com.mainProject.GetMappings;
+package com.mainProject.GetMappings.MetricsControllers;
 
+import com.mainProject.DatabaseConnector.DatabaseManager;
+import com.mainProject.GetMappings.AggregatedMetricsVariables.AggregatedMemoryMetrics;
+import com.mainProject.GetMappings.MetricsVariables.MemoryMetrics;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,16 +14,11 @@ import java.util.List;
 @RestController
 public class MemoryMetricsController {
 
-    // JDBC URL, username, and password of MySQL server
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/sampleusers";
-    private static final String JDBC_USERNAME = "root";
-    private static final String JDBC_PASSWORD = "toor";
-
     @GetMapping("/get_memory_metrics")
     public List<MemoryMetrics> getMemoryMetrics() {
         List<MemoryMetrics> memoryMetricsList = new ArrayList<>();
         // Establishing a connection to the database
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             // Creating the SQL query to retrieve memory metrics
             String query = "SELECT timestamp, FreePhysicalMemory FROM memory_metrics ORDER BY timestamp DESC LIMIT 20";
             // Executing the query and retrieving results
@@ -69,7 +67,7 @@ public class MemoryMetricsController {
 
     private List<AggregatedMemoryMetrics> getAggregatedMemoryMetrics(String tableName, String queryGiven) {
         List<AggregatedMemoryMetrics> aggregatedMetricsList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             String query = queryGiven;
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -103,65 +101,6 @@ public class MemoryMetricsController {
             e.printStackTrace();
         }
         return aggregatedMetricsList;
-    }
-}
-
-class AggregatedMemoryMetrics {
-    private int year;
-    private int hour;
-    private String day;
-    private int month;
-    private double avgFreePhysicalMemory;
-    private double avgTotalVisibleMemorySize;
-
-    // Constructors, Getters, and Setters
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public String getDay() {
-        return day;
-    }
-
-    public void setDay(String day) {
-        this.day = day;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public double getAvgFreePhysicalMemory() {
-        return avgFreePhysicalMemory;
-    }
-
-    public void setAvgFreePhysicalMemory(double avgFreePhysicalMemory) {
-        this.avgFreePhysicalMemory = avgFreePhysicalMemory;
-    }
-
-    public double getAvgTotalVisibleMemorySize() {
-        return avgTotalVisibleMemorySize;
-    }
-
-    public void setAvgTotalVisibleMemorySize(double avgTotalVisibleMemorySize) {
-        this.avgTotalVisibleMemorySize = avgTotalVisibleMemorySize;
     }
 }
 

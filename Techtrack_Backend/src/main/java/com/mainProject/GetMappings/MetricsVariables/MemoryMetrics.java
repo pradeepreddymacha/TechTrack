@@ -1,4 +1,4 @@
-package com.mainProject.GetMappings;
+package com.mainProject.GetMappings.MetricsVariables;
 
 public class MemoryMetrics {
     long timestamp;

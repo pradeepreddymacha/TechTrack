@@ -6,11 +6,11 @@ import com.resource.CommonFunctions.CollectMetrics;
 
 import java.util.List;
 import org.junit.Test;
+
+import static com.resource.Constants.Constants.processPowerShellPath;
 import static org.junit.Assert.*;
 public class ProcessMetricsCollectorTest {
-
-    private final String ProcessMetricsScript = "src/main/resources/static/process_list.ps1";
-    private final List<JsonObject> metrics = CollectMetrics.collectMetrics(ProcessMetricsScript);
+    private final List<JsonObject> metrics = CollectMetrics.collectMetrics(processPowerShellPath);
     @Test
     public void testProcessIDCollection() {
         for(JsonObject js:metrics){

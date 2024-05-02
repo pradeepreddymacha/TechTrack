@@ -4,6 +4,8 @@ import com.google.gson.JsonObject;
 import org.junit.Test;
 
 import static com.resource.CommonFunctions.CollectMetrics.collectMetrics;
+import static com.resource.Constants.Constants.diskPowerShellPath;
+import static com.resource.Constants.Constants.memoryPowerShellPath;
 import static com.resource.MainCollectors.DynamicSystemMetricsCollector.collectCPULoad;
 import static org.junit.Assert.*;
 
@@ -11,12 +13,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class DynamicSystemMetricsCollectorTest {
-    private final String diskUsageScript = "src/main/resources/static/disk_usage.ps1";
+    private final List<JsonObject> discMetrics = collectMetrics(diskPowerShellPath);
 
-    private final String memoryUsageScript = "src/main/resources/static/memory_usage.ps1";
-    private final List<JsonObject> discMetrics = collectMetrics(diskUsageScript);
-
-    private final List<JsonObject> memoryMetrics = collectMetrics(memoryUsageScript);
+    private final List<JsonObject> memoryMetrics = collectMetrics(memoryPowerShellPath);
     @Test
     public void testDiskMetricsCollection() {
 

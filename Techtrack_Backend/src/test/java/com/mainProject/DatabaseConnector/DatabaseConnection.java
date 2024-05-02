@@ -1,4 +1,5 @@
-import com.mainProject.DatabaseConnector.DatabaseManager;
+package com.mainProject.DatabaseConnector;
+
 import org.junit.Test;
 
 import java.sql.Connection;
@@ -6,7 +7,7 @@ import java.sql.SQLException;
 
 import static org.junit.Assert.*;
 
-public class databaseConnection {
+public class DatabaseConnection {
     @Test
     public void testConnectionEstablishment() {
         try {

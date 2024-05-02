@@ -1,5 +1,8 @@
-package com.mainProject.GetMappings;
+package com.mainProject.GetMappings.MetricsControllers;
 
+import com.mainProject.DatabaseConnector.DatabaseManager;
+import com.mainProject.GetMappings.AggregatedMetricsVariables.AggregatedNetworkMetrics;
+import com.mainProject.GetMappings.MetricsVariables.NetworkMetrics;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,15 +13,10 @@ import java.util.List;
 @RestController
 public class NetworkMetricsController {
 
-    // JDBC URL, username, and password of MySQL server
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/sampleusers";
-    private static final String JDBC_USERNAME = "root";
-    private static final String JDBC_PASSWORD = "toor";
-
     @GetMapping("/networkMetrics")
     public List<NetworkMetrics> getNetworkMetrics() {
         List<NetworkMetrics> networkMetricsList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             String query = "SELECT received_bytes,sent_bytes,timestamp FROM network_metrics ORDER BY timestamp DESC LIMIT 20";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -47,7 +45,7 @@ public class NetworkMetricsController {
     @GetMapping("/get_network_metrics")
     public List<AggregatedNetworkMetrics> getAllNetworkMetrics() {
         List<AggregatedNetworkMetrics> networkMetricsList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             String query = "SELECT * FROM network_metrics ORDER BY timestamp DESC LIMIT 20";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {

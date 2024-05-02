@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: CollectorTests.DynamicSystemMetricsCollectorTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.602 s -- in CollectorTests.DynamicSystemMetricsCollectorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.462 s -- in CollectorTests.DynamicSystemMetricsCollectorTest

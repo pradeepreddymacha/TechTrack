@@ -1,4 +1,4 @@
-package com.mainProject.GetMappings;
+package com.mainProject.GetMappings.AggregatedMetricsVariables;
 
 public class AggregatedCPUMetrics {
     private int year;

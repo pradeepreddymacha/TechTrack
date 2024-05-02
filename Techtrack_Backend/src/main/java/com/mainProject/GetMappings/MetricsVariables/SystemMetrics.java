@@ -1,4 +1,4 @@
-package com.mainProject.GetMappings;
+package com.mainProject.GetMappings.MetricsVariables;
 
 
 import java.sql.Timestamp;

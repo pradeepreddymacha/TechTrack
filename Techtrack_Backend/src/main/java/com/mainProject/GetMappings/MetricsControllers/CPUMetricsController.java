@@ -1,5 +1,8 @@
-package com.mainProject.GetMappings;
+package com.mainProject.GetMappings.MetricsControllers;
 
+import com.mainProject.DatabaseConnector.DatabaseManager;
+import com.mainProject.GetMappings.AggregatedMetricsVariables.AggregatedCPUMetrics;
+import com.mainProject.GetMappings.MetricsVariables.CPUMetrics;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.sql.*;
@@ -9,15 +12,10 @@ import java.util.List;
 @RestController
 public class CPUMetricsController {
 
-    // JDBC URL, username, and password of MySQL server
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/sampleusers";
-    private static final String JDBC_USERNAME = "root";
-    private static final String JDBC_PASSWORD = "toor";
-
     @GetMapping("/get_cpu_metrics")
     public List<CPUMetrics> getCPUMetrics() {
         List<CPUMetrics> cpuMetricsList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             String query = "SELECT timestamp, CPU_Load FROM CPU_metrics ORDER BY timestamp DESC LIMIT 20";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -63,7 +61,7 @@ public class CPUMetricsController {
 
     private List<AggregatedCPUMetrics> getAggregatedCPUMetrics(String tableName, String querygiven) {
         List<AggregatedCPUMetrics> aggregatedMetricsList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             String query = querygiven;
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {

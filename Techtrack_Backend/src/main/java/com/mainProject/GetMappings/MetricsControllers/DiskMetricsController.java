@@ -1,5 +1,8 @@
-package com.mainProject.GetMappings;
+package com.mainProject.GetMappings.MetricsControllers;
 
+import com.mainProject.DatabaseConnector.DatabaseManager;
+import com.mainProject.GetMappings.AggregatedMetricsVariables.AggregatedDiskMetrics;
+import com.mainProject.GetMappings.MetricsVariables.DiskMetrics;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,15 +13,10 @@ import java.util.List;
 @RestController
 public class DiskMetricsController {
 
-    // JDBC URL, username, and password of MySQL server
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/sampleusers";
-    private static final String JDBC_USERNAME = "root";
-    private static final String JDBC_PASSWORD = "toor";
-
     @GetMapping("/get_disk_metrics")
     public List<DiskMetrics> getDiskMetrics() {
         List<DiskMetrics> diskMetricsList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             String query = "SELECT timestamp, FreeSpace, Size FROM disk_metrics ORDER BY timestamp DESC LIMIT 20";
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -62,7 +60,7 @@ public class DiskMetricsController {
 
     private List<AggregatedDiskMetrics> getAggregatedDiskMetrics(String tableName, String queryGiven) {
         List<AggregatedDiskMetrics> aggregatedMetricsList = new ArrayList<>();
-        try (Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USERNAME, JDBC_PASSWORD)) {
+        try (Connection connection = DatabaseManager.getConnection()) {
             String query = queryGiven;
             try (PreparedStatement preparedStatement = connection.prepareStatement(query);
                  ResultSet resultSet = preparedStatement.executeQuery()) {

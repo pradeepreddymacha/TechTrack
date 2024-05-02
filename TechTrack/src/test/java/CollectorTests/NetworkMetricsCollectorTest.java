@@ -3,14 +3,15 @@ package CollectorTests;
 import com.google.gson.JsonObject;
 import com.resource.CommonFunctions.CollectMetrics;
 import org.junit.Test;
+
+import static com.resource.Constants.Constants.networkPowerShellPath;
 import static org.junit.Assert.*;
 
 import java.util.List;
 
 public class NetworkMetricsCollectorTest {
-    private final String networkMetricsScript = "src/main/resources/static/network_metrics.ps1";
 
-    private final List<JsonObject> metrics = CollectMetrics.collectMetrics(networkMetricsScript);
+    private final List<JsonObject> metrics = CollectMetrics.collectMetrics(networkPowerShellPath);
 
     @Test
     public void testBytesSentCollection(){
