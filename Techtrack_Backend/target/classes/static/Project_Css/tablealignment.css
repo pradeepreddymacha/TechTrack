@@ -1,0 +1,27 @@
+/* CSS specific for CPU Metrics page */
+main {
+    padding: 20px;
+    text-align: center; /* Center-align content within main */
+}
+
+table.cpu-metrics {
+    width: 80%; /* Adjust width as needed */
+    margin: 20px auto; /* Centers the table horizontally with automatic margins and adds vertical spacing */
+    border-collapse: collapse; /* Optional: for better border handling */
+}
+
+th, td {
+    border: 1px solid #ddd; /* Light grey border for table cells */
+    padding: 8px; /* Padding inside cells for better text spacing */
+    text-align: left; /* Aligns text to the left within cells */
+}
+
+th {
+    background-color: #343a40; /* Dark background for header cells */
+    color: white; /* White text color for headers */
+}
+
+h2 {
+    color: #333; /* Dark grey color for headers */
+    margin-top: 40px; /* Adds space above each header */
+}

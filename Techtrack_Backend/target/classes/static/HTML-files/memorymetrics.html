@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Metrics - TechTrack</title>
+    <link rel="stylesheet" href="../Project_Css/link.css">  <!-- General styles shared across pages -->
+    <link rel="stylesheet" href="../Project_Css/tablealignment.css">  <!-- Specific styles for memory metrics -->
+</head>
+<body>
+<header>
+    <img src="../logos/logo.png" alt="TechTrack Logo" class="logo">
+    <div class="header-content">
+        <h1>Memory Metrics</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Metrics</a>
+                    <div class="dropdown-content">
+                        <a href="systemmetrics.html">System Details</a>
+                        <a href="cpumetrics.html">CPU</a>
+                        <a href="diskmetrics.html">Disk</a>
+                        <a href="memorymetrics.html">Memory</a>
+                        <a href="networkmetrics.html">Network</a>
+                        <a href="processmetrics.html">Process</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <h2>Memory Metrics - Hourly (Today)</h2>
+    <table id="hourlyMemoryMetrics" class="memory-metrics">
+        <tr>
+            <th>Timestamp</th>
+            <th>Free Physical Memory</th>
+            <th>Total Visible Memory Size</th>
+            <th>System Directory</th>
+            <th>Build Number</th>
+        </tr>
+    </table>
+
+    <h2>Memory Metrics - Weekly</h2>
+    <table id="weeklyMemoryMetrics" class="memory-metrics">
+        <tr>
+            <th>Week</th>
+            <th>Free Physical Memory</th>
+            <th>Total Visible Memory Size</th>
+            <th>System Directory</th>
+            <th>Build Number</th>
+        </tr>
+    </table>
+
+    <h2>Memory Metrics - Monthly</h2>
+    <table id="monthlyMemoryMetrics" class="memory-metrics">
+        <tr>
+            <th>Month</th>
+            <th>Free Physical Memory</th>
+            <th>Total Visible Memory Size</th>
+            <th>System Directory</th>
+            <th>Build Number</th>
+        </tr>
+    </table>
+</main>
+
+<script src="../tables/memorymetrics.js"></script>
+
+</body>
+</html>

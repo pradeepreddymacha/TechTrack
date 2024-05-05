@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechTrack Dashboard</title>
+    <link rel="stylesheet" href="Project_Css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="charts/charts.js"></script>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <img src="logos/logo.png" alt="TechTrack Logo" class="logo">
+        <h1>TechTrack</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Metrics</a>
+                    <div class="dropdown-content">
+                        <a href="HTML-files/systemmetrics.html">System Details</a>
+                        <a href="HTML-files/cpumetrics.html">CPU</a>
+                        <a href="HTML-files/diskmetrics.html">Disk</a>
+                        <a href="HTML-files/memorymetrics.html">Memory</a>
+                        <a href="HTML-files/networkmetrics.html">Network</a>
+                        <a href="HTML-files/processmetrics.html">Process</a>
+                    </div>
+                </li>
+                <li><a href="HTML-files/about.html">About</a></li>
+                <li><a href="HTML-files/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="dashboard">
+    <section id="cpu">
+        <h2>CPU Usage</h2>
+        <canvas id="cpuChart" style="cursor: pointer;"></canvas>
+    </section>
+    <section id="memory">
+        <h2>Memory Usage</h2>
+        <canvas id="memoryChart" style="cursor: pointer;"></canvas>
+    </section>
+    <section id="disk">
+        <h2>Disk Space</h2>
+        <canvas id="diskChart" style="cursor: pointer;"></canvas>
+    </section>
+    <section id="network">
+        <h2>Network Activity</h2>
+        <canvas id="networkChart" style="cursor: pointer;"></canvas>
+    </section>
+</div>
+<footer>
+    <p>&copy; 2024 TechTrack. All rights reserved.</p>
+</footer>
+<script src="charts/networkMetrics.js?v=1"></script>
+<script src="charts/CPUmetrics.js?v=1"></script>
+<script src="charts/memoryMetrics.js?v=1"></script>
+<script src="charts/diskMetrics.js?v=1"></script>
+</body>
+</html>

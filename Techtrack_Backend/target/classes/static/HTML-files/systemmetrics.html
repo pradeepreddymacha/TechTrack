@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Metrics - TechTrack</title>
+    <link rel="stylesheet" href="../Project_Css/systemmetrics.css">
+</head>
+<body>
+<header>
+    <img src="../logos/logo.png" alt="TechTrack Logo" class="logo">
+    <div class="header-content">
+        <h1>System Metrics</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Metrics</a>
+                    <div class="dropdown-content">
+                        <a href="systemmetrics.html">System Details</a>
+                        <a href="cpumetrics.html">CPU</a>
+                        <a href="diskmetrics.html">Disk</a>
+                        <a href="memorymetrics.html">Memory</a>
+                        <a href="networkmetrics.html">Network</a>
+                        <a href="processmetrics.html">Process</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="system-card">
+        <h2>System Information</h2>
+        <div class="card-content">
+            <p>OS Name: <span id="osName"></span></p>
+            <p>OS Version: <span id="osVersion"></span></p>
+            <p>Host Name: <span id="hostName"></span></p>
+            <p>MAC Address: <span id="macAddress"></span></p>
+            <p>System Manufacturer: <span id="systemManufacturer"></span></p>
+            <p>System Model: <span id="systemModel"></span></p>
+            <p>System Type: <span id="systemType"></span></p>
+            <p>Total Physical Memory: <span id="totalPhysicalMemory"></span></p>
+        </div>
+    </div>
+</main>
+<footer>
+    <p>&copy; 2024 TechTrack. All rights reserved.</p>
+</footer>
+<script src="../tables/systemmetrics.js"></script>
+</body>
+</html>
