@@ -15,8 +15,10 @@ Before you begin, ensure you have met the following requirements:
 
 ## Database Configuration
 
-Use the following credentials to access the local database:
+Use the following credentials to create and access the local database:
 
+- **HostName**: localhost
+- **Port**: 3306
 - **Username**: root
 - **Password**: toor
 
